@@ -1,0 +1,46 @@
+{extend name="base/base" /}
+{block name="title"}修改密码{/block}
+{block name="breadcrumb"}
+    <span class="layui-breadcrumb">
+        <a><cite>首页</cite></a>
+        <a><cite>修改密码</cite></a>
+    </span>
+    <hr >
+{/block}
+{block name="content"}
+<form class="layui-form">
+	<div class="layui-form-item layui-col-lg3 layui-col-xs11 layui-col-sm6 layui-col-md3">
+	    <label class="layui-form-label">旧密码</label>
+	    <div class="layui-input-block">
+	    	<input type="password" name="oldPwd" placeholder="请输入旧密码" id="oldPwd" data-password='' lay-verify="required" class="layui-input">
+	    </div>
+	</div>
+	<div class="layui-form-item layui-col-lg3 layui-col-xs11 layui-col-sm6 layui-col-md3">
+	    <label class="layui-form-label">新密码</label>
+	    <div class="layui-input-block">
+	    	<input type="password" name="newPwd" placeholder="请输入新密码" id="newPwd" lay-verify="required" class="layui-input">
+	    </div>
+	</div>
+	<div class="layui-form-item layui-col-lg3 layui-col-xs11 layui-col-sm6 layui-col-md3">
+	    <label class="layui-form-label">确认密码</label>
+	    <div class="layui-input-block">
+	    	<input type="hidden" name="id" value="{$id}" id="item-id">
+	    	<input type="password" name="password" placeholder="请确认密码" lay-verify="required" class="layui-input">
+	    </div>
+	</div>
+	<div class="layui-form-item layui-col-lg3 layui-col-xs11 layui-col-sm6 layui-col-md3">
+	    <div class="layui-input-block">
+	    	<button class="layui-btn" lay-submit lay-filter="formDemo">立即修改</button>
+			<!--<button type="reset" class="layui-btn layui-btn-primary">重置</button>-->
+	    </div>
+	</div>
+</form>
+{/block}
+{block name="js_footer"}
+<script src="__JS__/user/editPwd.js"></script>
+<script>
+	var savePwd = "{:url('User/editPwd')}"
+			, oidPwd = "{:url('User/oidPwd')}"
+			,loginout = "{:url('Login/loginout')}";
+</script>
+{/block}
