@@ -39,6 +39,10 @@ class BaseController extends Controller
         }
     }
 
+    public function _empty(){
+        $this->error('暂无访问权限');
+    }
+
     /**
      * 返回后台菜单
      * @return array
